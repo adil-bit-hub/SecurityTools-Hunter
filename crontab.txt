@@ -1,0 +1,11 @@
+# SafeToolHunter 定时任务（按需启用：crontab /opt/safeToolHunter/crontab.txt）
+# 注意：下面第一条会对互联网主机发起默认口令检测，启用前请确认已获授权。
+
+# 每天 00:00 全量执行（清洗 + FOFA 搜索 + 检测）
+0 0 * * * /opt/safeToolHunter/run.sh
+
+# 每天 04:00 强制收工，避免长期占用
+0 4 * * * pkill -f 'safeToolHunter.py'
+
+# 仅登记资产发现时间（不主动检测，纯被动）
+# 0 */6 * * * /opt/safeToolHunter/run.sh --record-only

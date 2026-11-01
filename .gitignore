@@ -1,0 +1,23 @@
+# 真实凭据配置，禁止入库（模板见 config/*.example.json）
+config/dbconfig.json
+config/fofaconfig.json
+
+# Python 产物
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 运行产物
+logs/
+result/
+*.log
+
+# 扫描结果文本
+*_default_login.txt
+*_ErrorConnection.log
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store
